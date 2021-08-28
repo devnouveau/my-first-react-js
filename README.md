@@ -1,1 +1,1 @@
-# StudyReact
+# Study React
