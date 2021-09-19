@@ -22,12 +22,12 @@
 
 
 4. 설치된 앱 구조 확인해보자
-    ### 디렉토리
+    디렉토리
     - node_modules : 라이브러리 모은 폴더
     - public : static한 파일 보관함(robots, favicon). 파일 압축은 안됨.
     - src : 소스코드 보관
 
-    ### 파일
+    파일
     - package.json : 설치한 라이브러리 목록
 
 
