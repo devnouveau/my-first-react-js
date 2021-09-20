@@ -1,4 +1,4 @@
-/* eslint-disable */ // 컴파일 waring에러메시지 표시하지 않게 함
+/* eslint-disable */ // 컴파일 warning에러메시지 표시하지 않게 함
 /* react모듈에서 default export인 React와, 하나의 멤버 useState를 import해옴 */
 import React, { useState } from 'react'; 
 // import logo from './logo.svg';
