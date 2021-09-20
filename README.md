@@ -36,7 +36,7 @@
     3. add item누르고, "javascript": "javascriptreact" 키-값 쌍 추가하기
 
 
-
+## 강의 내용은 index.js, App.js 참고
 
 
 
