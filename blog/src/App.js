@@ -6,7 +6,7 @@ import './App.css';
 
 
 
-function App() {
+function App() { //function component
 
 /* 
   // 변수,함수로 데이터바인딩하는 경우
@@ -164,4 +164,6 @@ function Modal() {
   1. state쓸 때 복잡해짐(상위컴포넌트에서 만든 state이용시 props이용해야 함)
 */
 
+
 export default App;
+
