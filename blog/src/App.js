@@ -1,5 +1,6 @@
 /* eslint-disable */ // 컴파일 waring에러메시지 표시하지 않게 함
-import React, { useState } from 'react'; // 변수로 데이터바인딩하는 대신 state를 사용하기 위함
+/* react모듈에서 default export인 React와, 하나의 멤버 useState를 import해옴 */
+import React, { useState } from 'react'; 
 // import logo from './logo.svg';
 import './App.css';
 
@@ -8,7 +9,7 @@ import './App.css';
 function App() {
 
 /* 
-  // 데이터바인딩 테스트 위한 변수와 함수
+  // 변수,함수로 데이터바인딩하는 경우
   let posts = "서버에서 가져온 글";
   function 함수() {
     return 100;
@@ -22,7 +23,7 @@ function App() {
   2. react모듈에서 가져온 useState()를 이용해서 생성
   3. 문자, 숫자, array, object 저장가능
 
-  State 사용이유 
+  State로 데이터바인딩 하는 이유 
   1. 웹을 app처럼 동작하게 하기 위해. 
   (state가 변경되면 HTML이 자동으로 재렌더링 됨)
 
@@ -34,11 +35,12 @@ function App() {
 
   // var [a,b] = [10,100];  // ES6 destructuring 문법. array, object에 있던 자료를 변수에 쉽게 담을 수 있음. 
 
-  /* 리액트의 데이터 저장공간 state 만들기.*/
+/* s: 리액트의 데이터 저장공간 state 만들기.*/
   let [글제목,글제목변경함수] = useState(['파이썬기초', '이펙티브자바', 'ES6']);   // -> [a,b] array가 생성됨.
   let [따봉,따봉변경함수] = useState(0); 
+/* e: 리액트의 데이터 저장공간 state 만들기.*/
 
-  /* State 변경하기 */
+/* s: State 변경하기 */
   function 제목바꾸기() {
     // 글제목[1] = 1; // -> 값 직접 대입시 state변경 및 재렌더링이 정상적으로 되지 않음
     // 글제목변경함수(['가방추천', '라면맛집', '자바기초']); // state를 대체해주는 함수를 사용해야 함.
@@ -55,6 +57,7 @@ function App() {
     newArray = newArray.sort();
     글제목변경함수(newArray);
   }
+/* e: State 변경하기 */
 
 
 
@@ -62,8 +65,9 @@ function App() {
 
 
 
-
-  return (
+  return ( {
+    {/* JSX에서 javascript코드는 {}내에 작성한다. */}
+    
     <div className="App">
       <div className="black-nav">
         <div>개발 Blog</div>
@@ -71,6 +75,7 @@ function App() {
         {/* JSX에서 style속성값은 {}내에, object형식으로 입력해야 함. css속성명도 camelCase로 변경해서 입력 */}
       </div>
 
+      {/* s: JSX에서 변수,함수로 데이터바인딩하는 경우 */}
 
       {/* <h4>{ posts }</h4> */}
       {/* 데이터바인딩 :: {} 내에 변수명을 입력하면 값이 출력됨 */}
@@ -81,24 +86,26 @@ function App() {
       {/* <img src={ logo } alt="" /> */}
       {/* 데이터바인딩 :: import해온 모듈/객체명을 {}내에 삽입해 속성값으로 사용 */}
 
+      {/* e: JSX에서 변수,함수로 데이터바인딩하는 경우 */}
 
 
-
+      {/* s: JSX에서 이벤트처리 */}
       <button onClick={ 제목바꾸기 }>제목변경버튼</button> {/* onClick={ 제목바꾸기() } 아님!! ()쓰지말고 입력 */}
       <button onClick={ 정렬 }>정렬버튼</button> 
-
-
-
       
       <div className="list">
         {/* JSX에서는 class가 아닌 className */}
 
+        {/* s: JSX에서 이벤트처리 */}
         <h3> { 글제목[0] } <span onClick={ ()=>{ 따봉변경함수(따봉+1) } }>👍</span> { 따봉 } </h3> 
         {/*  { 글제목[0] } : state에 저장된 데이터를 출력함 */}
         {/* onClick으로 이벤트 사용. {}내에는 반드시 함수가 들어가야 함. */}
+      
         <p>m월 d일 발행</p>
         <hr />
       </div>
+      {/* e: JSX에서 이벤트처리 */}
+
 
       <div className="list">
         <h3> { 글제목[1] } </h3> 
@@ -112,7 +119,7 @@ function App() {
         <hr />
       </div>
 
-
+      {/* s: 리액트의 Component문법 */}
       {/* 
       <div className="modal">
         <h2>제목</h2>
@@ -122,9 +129,8 @@ function App() {
       */}
       {/* 위의 태그를 아래와 같이 컴포넌트를 이용하여 출력할 수 있다. */}
 
-      {/* 리액트의 Component문법 */}
       <Modal></Modal>{/* 함수명을 태그처럼 사용 */}
-
+      {/* e: 리액트의 Component문법 */}
 
     </div>
 
@@ -132,7 +138,7 @@ function App() {
 }
 
 
-/* 리액트의 Component문법 */
+/* s: 리액트의 Component문법 */
 function Modal() {
   return (
     <div className="modal">
@@ -142,6 +148,8 @@ function Modal() {
     </div>
   )
 }
+/* e: 리액트의 Component문법 */
+
 /*
   컴포넌트 유의사항
   1. 이름은 대괄호
