@@ -62,12 +62,9 @@ function App() { //function component
 
 
 
+  /* JSX에서 javascript코드는 {}내에 작성한다. */
 
-
-
-  return ( {
-    {/* JSX에서 javascript코드는 {}내에 작성한다. */}
-    
+  return (
     <div className="App">
       <div className="black-nav">
         <div>개발 Blog</div>
